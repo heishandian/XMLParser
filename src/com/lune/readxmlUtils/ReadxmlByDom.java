@@ -1,20 +1,15 @@
 package com.lune.readxmlUtils;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import com.lune.bean.Book;
+import org.w3c.dom.Document;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.NodeList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.soap.Node;
-
-import org.w3c.dom.Document;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
-
-import com.lune.bean.Book;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 用DOM方式读取xml文件
@@ -63,7 +58,7 @@ public class ReadxmlByDom {
 				contents.add(content);
 				//System.out.println(contents);
 			}
-			
+
 			book.setName(contents.get(0));
 			book.setAuthor(contents.get(1));
 			book.setYear(Integer.parseInt(contents.get(2)));
@@ -76,7 +71,7 @@ public class ReadxmlByDom {
 	}
 	
 	public static void main(String args[]){
-		String fileName = "src/res/books.xml";
+		String fileName = "D:\\程序\\gitdownloadcode\\XMLParser\\src\\res";
 		try {
 			List<Book> list = ReadxmlByDom.getBooks(fileName);
 			for(Book book :list){

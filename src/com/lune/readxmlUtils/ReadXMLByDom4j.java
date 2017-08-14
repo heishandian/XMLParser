@@ -1,17 +1,16 @@
 package com.lune.readxmlUtils;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
+import com.lune.bean.Book;
 import org.dom4j.Attribute;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
-import com.lune.bean.Book;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * 用DOM4J方法读取xml文件
@@ -82,8 +81,7 @@ public class ReadXMLByDom4j {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		File file = new File("src/res/books.xml");
+		File file = new File("D:\\程序\\gitdownloadcode\\XMLParser\\src\\res\\books.xml");
 		List<Book> bookList = new ReadXMLByDom4j().getBooks(file);
 		for(Book book : bookList){
 			System.out.println(book);
